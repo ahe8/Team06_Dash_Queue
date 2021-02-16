@@ -17,6 +17,7 @@ Technologies used for this project:
 ## Content
 Content of the project folder:
 
+
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
