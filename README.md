@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+this is a test for github
 	
 ## Technologies
 Technologies used for this project:
