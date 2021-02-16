@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-test test test
+Austin
 	
 ## Technologies
 Technologies used for this project:
