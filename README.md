@@ -5,7 +5,11 @@
 * [Contents](#content)
 
 ## General Info
+<<<<<<< HEAD
 this is a test for github
+=======
+test test test
+>>>>>>> bf589715b7e7acc4ed41dbb2f160eec7484110f1
 	
 ## Technologies
 Technologies used for this project:
@@ -16,6 +20,7 @@ Technologies used for this project:
 	
 ## Content
 Content of the project folder:
+
 
 
 ```
