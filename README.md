@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+test test test
 	
 ## Technologies
 Technologies used for this project:
@@ -16,6 +16,7 @@ Technologies used for this project:
 	
 ## Content
 Content of the project folder:
+
 
 
 ```
