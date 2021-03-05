@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    
+
     <meta charset="utf-8">
     <title>Dash Queue</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
-
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
 </head>
 
@@ -43,6 +43,13 @@
         </div>
     </nav>
 
+    <div class="container">
+        <h1 class="display-4">Welcome to Dash Queue</h1>
+        <h1>Let's get you logged in...</h1>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+    </div>
+
     <nav class="navbar fixed-bottom navbar-light bg-light">
         <a class="navbar-brand" href="#">Contact Us</a>
     </nav>
@@ -60,28 +67,68 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBlVVWzzlSj2gZaqjwRfJ0hjFf_agCiIwU",
+            authDomain: "dashqueue-ad3d8.firebaseapp.com",
+            projectId: "dashqueue-ad3d8",
+            storageBucket: "dashqueue-ad3d8.appspot.com",
+            messagingSenderId: "1052516689603",
+            appId: "1:1052516689603:web:b36b21b29d5cb2a45aa476"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
 
-    <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      </form>
-
+    <script>// Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function () {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: 'main.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url.
+            privacyPolicyUrl: '<your-privacy-policy-url>'
+        };
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
 </body>
 
 </html>
