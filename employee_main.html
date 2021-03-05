@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    
+
     <meta charset="utf-8">
     <title>Dash Queue</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
@@ -41,12 +41,65 @@
                 </li>
             </ul>
         </div>
+
     </nav>
 
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
         <a class="navbar-brand" href="#">Contact Us</a>
     </nav>
+
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <p class= "text-center"> To Verify Customer Appointment: Provide Authentication Code and Phone Number </p>
+    </div>
+
+    <form> 
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Confirmation Code</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label"> Phone Number </label>
+            <div class="col-sm-10">
+                <input type="phone number" class="form-control" id="inputPassword3">
+            </div>
+        </div>
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0"> Reservation Type: </legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                        checked>
+                    <label class="form-check-label" for="gridRadios1">
+                        Booked-In-Advance
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                        Walk-In
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </form>
+    <div>
+        <p></p>
+    </div>
+
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <p class= "text-center"> Scan QR Code: </p>
+    </div>
+    <div>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEX///8AAADPz8+WlpZ0dHT5+fmTk5Nqamrf39/y8vJiYmJmZmbT09PY2Ni6urpubm7l5eVYWFheXl5JSUmEhITGxsaMjIwTExOcnJyzs7M8PDxCQkKjo6Otra3r6+vJyckcHBxSUlIlJSUwMDB5eXkrKysZGRlOfz1eAAAGZElEQVR4nO2df2OiMAyGQQVBRVER0alzt9t9/494Q2+3qQkkpZWgef5ea981/ZWmwfMURVEURVEURVEURXkCgnTSqyFy2oCo7ucnaWBe+6FY+vUM7ckBGBJasCwORnUHGaHyTwaWNV0yoDUiM+jIZE2rW4ZCf51wa54Sa5ai0Pc3vIo35IrFKORJTOj1ylHoMww1oI5BWQrX9OmGOItKU+hn1FoPnFolKfSp62LRWYUFsVbKTkamwiWt0oBVqSiFPm2uSTusMCVVOumwwgmp0l6HFfZUoSqEmDlVOLuTwnnRxwinThVOQ/SXi7lFhdS9wn0B9l7GCvuO22pGXxViqEIxqEIUVSgGVYiiCsWgClFUoRhUIYoqFIMqRLGlME5Wu2w2Ho1G40G2e01ik0qqaFfhNNteX0L+2WYrdj1VtKcw3uN3O/NNg/CXK9pS2Ktzcf5mh00gtKNwRbmam9MaUkcbCicvBH0lbzZixe6vMB4T9ZVkzafWuytkxOCUHBtPrDYVhoRilBi7S8ihEwihqcJoOLhiVn83kf5iC/T9l2aWOp1dN3ToLhT01UCfbxJv1xbMIfgDO+uGc8wF+r7djZwjmgj0/de2m1/PqpFA33cbKG4BZvjNLWvrxyrLHJsq9N/allANf6G/JW9bRBXNZpkvBK8ZcWXDt+EmikuSTb6t+sNj2zpwKk4TL/vL03y8qxAp1k7xIL8FZHiv+PGYFlR4f7AD7we2U9lgMfJuI6uMwdb6Ae5tioFAphMy9+BIF+4rCwGnuhK3D8QMQUL86vbSe7iYxJEIxw3WHxZgiQKnU3gtrDbRMzlY0nmD2YBdQYunBacbeSdFaHH7oPnsD9Ci4TbY2ADwWQa1H3ZA2V9Om2sA9AZzRC79DpSWtiRCD9xozx1KoP/PzmFrTQD20S+M4oBCYYt+DEwWlJXiC2DF2Nq7WrQB9JCW08IIKG/2rN4VwK6bY6Re8HFbgSyvG/AUgHJ/8w2w53P7dIMLMJXyXsQDd2OyJlOgC3hGBpg5zwhcA3hoeJ5dYKqSdbwYNVUITKZNr0ztogprEW+ljz8Ogcgn3tkA2HvLmksbr4eAz42zr3UPcIblGRlwaSXLjwFEX7xzygfAvaMshyJ0tuBMNU3Luyf+c9tCzr4SGMfEvB13A3Dpc8wU6EJptzOQW5c+VUDOVma2LudAF090O4McprIOwB5oZ+RuAA6HvKn4LkCueWJsDBiDI2vPVgKGYdBiY8AbfWkOYSzbEmVvCUbzHx0314TfoMT6zSV8CyzLSXMGyT1YJxG55pa1ofkHEnVQPWUgD07kzTMlWK6eOe68jrCwIVn+7v+8Ic1dY4MKWgdPyHLRfANdPpx5h/zXezxSU9alzA+qsmTmF1mag6Tqb6VtSb+BzrHffMz6qySKomQaDqsDbYVdHf6kaZD3F/T78bvDyuZawaJtITjUB3l1zNsWggJddxsxblsJCidxdCVyxyIzDSGOXEO1NaEKnm6s9aJcQ41sTTdyezF+syRR7lhEwmL5yDVUr9f8jdcJuesirxs3+JMwuWPR81JqUtwy3wD+okiyRC+hvNbLzy6LBfoHkg31sx8RX9oXx91/rxouUfB0c2I1wPIPvOcXnu2OGuqJZDe89qotZ5ub2yVcovReLAkO0XQX5lmW5+F+lcIe366ORQZAbFVnDJUIbqiCN3A88F7swlgk0d1Fg8wTGGqX10UiT2CoTyDxqcfiw/QibqiyYocbgC39D9OHmKE+kEC4Fx/mjHHmdiw+VA+WXBvqwwm8lvhgJnpm4V6gUe5LiyyoJmqc+9Iwf6k9xjSB5vlL28/JPqaZaOs52RuwIM2iXVb4ufQTlolOK/QoI7/bCimoQhRVKAZViKIKxaAKUVShGFQhiioUgypEUYViUIUoqlAMqhDlKRUWjttqBpCc0ljhvOhjhG7vNKYh+ssF8FjeWGEVbvPmUEPjXSp0m4a77oOYqvBJFeKfVpGvkJZQnPkRLlEKaTnt4Mw63VBITD5B+eCtTIXUXGPAXqEjCql7r0NnFZKT3LAyQQhSSE9yE3DeLctRuGYkueGkSZCjkJXwDfrAhnSFzCw+dIlSFLLTFCXUsShDocm3kwPijCpCYWaWSetQUHY3blM8UR5OL4sGyd6CdNKrwW1e1aju5yep2ERoiqIoiqIoiqIoiqLY5C9aF1GnVdnYOgAAAABJRU5ErkJggg=="
+            class="rounded mx-auto d-block" alt="...">
+    </div>
+
+
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
