@@ -48,7 +48,7 @@
         <a class="navbar-brand" href="#">Contact Us</a>
     </nav>
 
-    <form>
+    <form id='registrationform'>
         <div class="form-group">
             <label for="inputCompany">Company Name</label>
             <input type="company" class="form-control" id="inputCompany" placeholder="Company">
@@ -77,8 +77,8 @@
                 <input type="text" class="form-control" id="inputCity">
             </div>
             <div class="form-group col-md-4">
-                <label for="inputState">Province</label>
-                <select id="inputState" class="form-control">
+                <label for="inputProvince">Province</label>
+                <select id="inputProvince" class="form-control">
                     <option selected>Choose...</option>
                     <option>Alberta</option>
                     <option>British Columbia</option>
@@ -96,12 +96,13 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="inputZip">Postal Code</label>
-                <input type="text" class="form-control" id="inputZip">
+                <label for="inputPostalCode">Postal Code</label>
+                <input type="text" class="form-control" id="inputPostalCode">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-        <button type="clear" class="btn btn-secondary">Clear all</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="clear" class="btn btn-secondary">Save</button>
+        <input class="btn btn-primary" id="reset_button" type="reset" value="Clear All">
     </form>
 
 
@@ -118,9 +119,75 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+    <script src="./scripts/firebase_api_dashqueue.js"></script>
+
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
+    <script>
+
+        document.getElementById('registrationform').addEventListener('submit', formSubmit);
+
+        //Reference for form collection(3)
+        let stores = db.collection('stores');
+
+        //listen for submit event//(1)
+        document
+            .getElementById('registrationform')
+            .addEventListener('submit', formSubmit);
+
+        //Submit form
+        function formSubmit(e) {
+            e.preventDefault();
+            // Get Values from the DOM
+            let company_name = document.querySelector('#inputCompany').value;
+            let company_email = document.querySelector('#inputEmail4').value;
+            let password = document.querySelector('#inputPassword4').value;
+            let address = document.querySelector('#inputAddress').value;
+            let address2 = document.querySelector('#inputAddress2').value;
+            let city = document.querySelector('#inputCity').value;
+            let province = document.querySelector('#inputProvince').value;
+            let postalcode = document.querySelector('#inputPostalCode').value;
+
+
+            addStore(company_name, company_email, password, address, address2, city, province, postalcode)
+        }
+
+
+        function addStore(company_name, company_email, password, address, address2, city, province, postalcode) {
+        var storesRef = db.collection("stores");
+        storesRef.add({
+                company_name: company_name,
+                company_email: company_email,
+                password: password,
+                address: address,
+                address2: address2,
+                city: city,
+                province: province,
+                postalcode, postalcode
+        });
+    }
+
+        // function addStore(company_name, company_email, password, address, address2, city, province, postalcode) {
+        //     let newStore = stores.push();
+        //     newStore.set({
+        //         company_name: company_name,
+        //         company_email: company_email,
+        //         password: password,
+        //         address: address,
+        //         address2: address2,
+        //         city: city,
+        //         province: province,
+        //         postalcode, postalcode
+        //     });
+        // }
+    </script>
 
 </body>
 
