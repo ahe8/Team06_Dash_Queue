@@ -3,14 +3,17 @@ function getStore() {
         var location = document.getElementById("store").value;
         console.log(location);
 
-				//read cities collection from firestore, with query
+				//read grocery store collection from firestore, with query
         db.collection("Grocery Stores")
             .where("name", "==", location)
             .get()
             .then(function (snap) {
                 snap.forEach(function(doc) {
                     console.log(doc.data());
-                    document.getElementById("availablestores").innerHTML = doc.data().location
+                    document.getElementById("availablestores1").innerHTML = doc.data().name;
+                    document.getElementById("availablelocations1").innerHTML = doc.data().location;
+                    document.getElementById("availablestores2").innerHTML = doc.data().name; 
+                    document.getElementById("availablelocations2").innerHTML = doc.data().location;
                     //do something with the data
                 })
             })
