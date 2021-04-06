@@ -1,10 +1,10 @@
-function getCity() {
+function getStore() {
     document.getElementById("submit").addEventListener('click', function () {
-        var location = document.getElementById("city").value;
+        var location = document.getElementById("store").value;
         console.log(location);
 
 				//read cities collection from firestore, with query
-        db.collection("cities")
+        db.collection("Grocery Stores")
             .where("name", "==", location)
             .get()
             .then(function (snap) {
@@ -15,4 +15,4 @@ function getCity() {
             })
     })
 }
-getCity();
+getStore();
