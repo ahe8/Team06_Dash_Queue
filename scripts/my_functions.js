@@ -14,8 +14,8 @@ function getStore() {
                     var location = doc.data().location;
                     var time = doc.data().time;
                     $("#details-go-here").append("<h1> " + name + "</h1>");
-                    $("#details-go-here").append("<h1> " + location + "</h1>");
-                    $("#details-go-here").append("<a href= /> " + time + "</a>");
+                    $("#details-go-here").append("<li> Location: " + location + "</li>");
+                    $("#details-go-here").append("Hours: <a href= />" + time + "</a>");
                 })
             })
     })
