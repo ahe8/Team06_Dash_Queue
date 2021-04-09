@@ -15,7 +15,7 @@ function getStore() {
                     var time = doc.data().time;
                     $("#details-go-here").append("<h1> " + name + "</h1>");
                     $("#details-go-here").append("<li> Location: " + location + "</li>");
-                    $("#details-go-here").append("Hours: <a href= confrimationpage.html>" + time + "</a>");
+                    $("#details-go-here").append("Available Appointments: <a href= confrimationpage.html>" + time + "</a>");
                 })
             })
     })
