@@ -8,6 +8,8 @@
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
+    
+
     <!-- Bootstrap for Mobile-gfirst, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -114,37 +116,6 @@
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
     <script src="scripts/my_functions.js"></script>
-
-    <script>
-        function readQuote() {
-            db.collection("shopping").doc("popular_stores")
-                .onSnapshot(
-                    function (snap) {
-                        console.log(snap.data());
-                        document.getElementById("store-goes-here").innerHTML = snap.data().store;
-                    })
-        }
-        readQuote();
-
-        function visitedstores() {
-            var storeRef = db.collection("shopping");
-
-            storeRef.add({
-                code: "SFW",
-                name: "Safeway",
-            });
-            storeRef.add({
-                code: "SON",
-                name: "Save-On-Foods",
-            });
-            storeRef.add({
-                code: "TA",
-                name: "Triple A Market",
-            });
-        }
-        visitedstores();
-
-    </script>
 
 </body>
 

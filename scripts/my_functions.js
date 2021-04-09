@@ -15,47 +15,9 @@ function getStore() {
                     var time = doc.data().time;
                     $("#details-go-here").append("<h1> " + name + "</h1>");
                     $("#details-go-here").append("<li> Location: " + location + "</li>");
-                    $("#details-go-here").append("Hours: <a href= />" + time + "</a>");
+                    $("#details-go-here").append("Hours: <a href= /confirmationpage>" + time + "</a>");
                 })
             })
     })
 }
 getStore();
-
-
-
-
-// db.collection("Grocery Stores")
-//     .doc(id)
-//     .get()
-//     .then(function (doc) {   // display details!
-//         var name = doc.data().fields.name;
-//         var geo_area = doc.data().fields.geo_local_area;
-//         var coord = doc.data().fields.geom.coordinates;
-//         var url = doc.data().fields.url;
-//         $("#details-go-here").append("<h1> " + name + "</h1>");
-//         $("#details-go-here").append("<h1> " + geo_area + "</h1>");
-//         $("#details-go-here").append("<h1> " + coord + "</h1>");
-//         $("#details-go-here").append("<a href='" + url + "' > " + url + ">");
-//         var likeid = "like" + id;
-//         $("#details-go-here").append("<h1 id='" + likeid + "'> CLICK HERE TO LIKE </h1>");
-//         addLikeListener(id, likeid);
-//         showLikes(likeid);
-//     })
-// }
-// getDetails();
-
-
-
-
-
-
-// function readQuote() {
-//     db.collection("shopping").doc("popular_stores")
-//         .onSnapshot(
-//             function (snap) {
-//                 console.log(snap.data());
-//                 document.getElementById("store-goes-here").innerHTML = snap.data().store;
-//             })
-// }
-// readQuote();
