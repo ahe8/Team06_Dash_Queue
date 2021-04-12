@@ -26,7 +26,6 @@ Content of the project folder:
 ├── calendar.html                                        #
 ├── confirmationpage.html                                #
 ├── contactus.html                                       #
-├── cover_page.html                                      #
 ├── employee_main.html                                   #
 ├── index.html                                           # landing HTML file
 ├── login.html                                           #
