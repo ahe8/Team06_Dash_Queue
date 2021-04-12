@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/signup.css">
 
 
 </head>
@@ -51,34 +52,34 @@
     <form id='registrationform'>
         <div class="form-group">
             <label for="inputCompany">Company Name</label>
-            <input type="company" class="form-control" id="inputCompany" placeholder="Company">
+            <input type="company" class="form-control" id="inputCompany" placeholder="Company" required>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
             </div>
         </div>
         <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
         </div>
         <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
+            <label for="inputAddress2">Address 2 (Optional)</label>
             <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="inputCity" required>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputProvince">Province</label>
-                <select id="inputProvince" class="form-control">
+                <select id="inputProvince" class="form-control" required>
                     <option selected>Choose...</option>
                     <option>Alberta</option>
                     <option>British Columbia</option>
@@ -97,12 +98,12 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="inputPostalCode">Postal Code</label>
-                <input type="text" class="form-control" id="inputPostalCode">
+                <input type="text" class="form-control" id="inputPostalCode" required>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="clear" class="btn btn-secondary">Save</button>
-        <input class="btn btn-primary" id="reset_button" type="reset" value="Clear All">
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+        </div>
     </form>
 
 
@@ -156,7 +157,8 @@
             let postalcode = document.querySelector('#inputPostalCode').value;
 
 
-            addStore(company_name, company_email, password, address, address2, city, province, postalcode)
+            addStore(company_name, company_email, password, address, address2, city, province, postalcode);
+            alert("Registration Complete!");
         }
 
 
@@ -171,10 +173,8 @@
                 city: city,
                 province: province,
                 postalcode, postalcode
-        });
-    }
-    
-
+            });
+        }
     </script>
 
 </body>
