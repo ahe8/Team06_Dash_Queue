@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>Dash Queue</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap for Mobile-gfirst, and JQuery -->
+    <!-- Bootstrap CSS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Optional styles and scripts of your own -->
-
-
+    <title>Dash Queue</title>
 </head>
 
 <body>
-
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Dash Queue</a>
+        <a class="navbar-brand" href="index.html">Dash Queue</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,28 +34,65 @@
         </div>
     </nav>
 
-
     <nav class="navbar fixed-bottom navbar-light bg-light">
-        <a class="navbar-brand" href="#">Contact Us</a>
+        <a class="navbar-brand" href="/contactus.html">Contact Us</a>
     </nav>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
+    <div class="container">
+        <img src="https://media4.s-nbcnews.com/i/newscms/2017_26/2053956/170627-better-grocery-store-main-se-539p_80a9ba9c8d466788799ca27568ee0d43.jpg"
+            class="img-fluid" alt="Responsive image">
+        <h2 style="text-align: center;"> Dash Queue </h2>
+        <p style="text-align: center;"> Pick a Time, Skip the Line</p>
+        <div class="text-center">
+        <a href="/login.html" class="btn btn-primary" style="margin:1em;">Get Started Now!</a>
+        </div>
+    </div>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+    <div class="container">
+        <div class="card-group">
+            <div class="card">
+                <img src="./images/_116400051_supermarketgettyimages-1215040530.jpg" class="card-img-top" alt="shopper">
+                <div class="card-body">
+                    <h5 class="card-title">Safety</h5>
+                    <p class="card-text">Skipping the line is not only convient, it's also safer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm"> Learn More </button>
+            </div>
+            <div class="card">
+                <img src="./images/fruit.jpg" class="card-img-top" alt="freshfruit">
+                <div class="card-body">
+                    <h5 class="card-title">Convience</h5>
+                    <p class="card-text"> Easy to schedule, and even easier to shop. Schedule your next shopping
+                        trip now.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm"> Book Now </button>
+            </div>
+            <div class="card">
+                <img src="./images/grocery-store-employee.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Business Friendly</h5>
+                    <p class="card-text"> With an easy and intuitive interface, Dash Queue emphasizes the needs and
+                        requirements of businness. </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm"> Learn More </button>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>

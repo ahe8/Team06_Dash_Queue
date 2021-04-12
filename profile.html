@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <title>Dash Queue</title>
 </head>
@@ -18,7 +18,7 @@
 
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" , style="background-color: royalblue;">
-        <a class="navbar-brand" href="">Dash Queue</a>
+        <a class="navbar-brand" href="index.html">Dash Queue</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,7 +38,7 @@
     </nav>
 
     <div class="container">
-        <h1 class="display-5 text-center">My bookings</h1>
+        <h1 class="display-5 text-center">My Bookings</h1>
         <h4>Store: <span id="booking-store-goes-here"></span></h4>
         <h4>Date: <span id="booking-date-goes-here"></span></h4>
         <h4>Time: <span id="booking-time-goes-here"></span></h4>
@@ -82,7 +82,7 @@
     <script src="scripts/my_functions.js"></script>
     <script>
         function readQuote() {
-            db.collection("Bookings").doc("BxZPYSfXhDmo1klfsJas")
+            db.collection("Bookings").doc("K9H8v6t1MpOMlgHKT117")
                 .onSnapshot(
                     function (snap) {
                         console.log(snap.data());
@@ -96,13 +96,13 @@
         function myBookings() {
             var bookingRef = db.collection("Bookings");
 
-            citiesRef.add({
-                store: "Safeway",
-                date: "March 27, 2021",
-                time: "4:00pm",
+            bookingRef.add({
+                store: "IGA",
+                date: "April 13, 2021",
+                time: "6:00pm",
             });
         }
-        myBookings();
+
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
