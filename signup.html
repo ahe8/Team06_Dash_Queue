@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="./styles/signup.css">
-
 
 </head>
 
@@ -46,7 +44,7 @@
 
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
-        <a class="navbar-brand" href="#">Contact Us</a>
+        <a class="navbar-brand" href="/contactus.html">Contact Us</a>
     </nav>
 
     <form id='registrationform'>
@@ -100,9 +98,16 @@
                 <label for="inputPostalCode">Postal Code</label>
                 <input type="text" class="form-control" id="inputPostalCode" required>
             </div>
+            <div class="form-group col-md-2">
+                <p>Hours of Operations:</p>
+                <label for="opening-time">Open</label>
+                <input id="opening-time" type=time required><br>
+                <label for="closing-time">Close</label>
+                <input id="closing-time" type=time required>
+            </div>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submit_button" style="margin-bottom: 5em;">Submit</button>
         </div>
     </form>
 
@@ -155,16 +160,18 @@
             let city = document.querySelector('#inputCity').value;
             let province = document.querySelector('#inputProvince').value;
             let postalcode = document.querySelector('#inputPostalCode').value;
+            let openingtime = document.querySelector('#opening-time').value;
+            let closingtime = document.querySelector('#closing-time').value;
 
 
-            addStore(company_name, company_email, password, address, address2, city, province, postalcode);
+            addStore(company_name, company_email, password, address, address2, city, province, postalcode, openingtime, closingtime);
             alert("Registration Complete!");
         }
 
 
-        function addStore(company_name, company_email, password, address, address2, city, province, postalcode) {
-        var storesRef = db.collection("stores");
-        storesRef.add({
+        function addStore(company_name, company_email, password, address, address2, city, province, postalcode, openingtime, closingtime) {
+            var storesRef = db.collection("stores");
+            storesRef.add({
                 company_name: company_name,
                 company_email: company_email,
                 password: password,
@@ -172,9 +179,12 @@
                 address2: address2,
                 city: city,
                 province: province,
-                postalcode, postalcode
+                postalcode: postalcode,
+                openingtime: openingtime,
+                closingtime: closingtime
             });
         }
+        
     </script>
 
 </body>
