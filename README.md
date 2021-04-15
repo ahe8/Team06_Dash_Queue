@@ -23,7 +23,7 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore                                           # Git ignore file
-├── calendar.html                                        #
+├── 404.html                                             #
 ├── confirmationpage.html                                #
 ├── contactus.html                                       #
 ├── employee_main.html                                   #
@@ -49,15 +49,13 @@ It has the following subfolders and files:
     /firebase_api_dashqueue.js                           #
     /my_functions.js                                     # 
 ├── styles                                               # Folder for styles
-    /calendar.css                                        # 
+    /confirmationpage.css                                # 
 
-Firebase hosting files: 
-├── .firebaserc...
-
-
+Firebase hosting files:
+├── .firebase                                            # Folder for firebase cache
+    /hosting..cache                                      # 
+├── .firebaserc                                          #
+├── firestore.indexes                                    #
+├── firestore.rules                                      #
+└── storage.rules                                        #
 ```
-
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
-
